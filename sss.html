@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>SSS | Nail Academy</title>
+
+<style>
+body{
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#e6f6ff,#fdf2f8);
+  max-width:1100px;
+  margin:auto;
+  padding:30px;
+  color:#0f172a;
+}
+
+h1{
+  text-align:center;
+  color:#0284c7;
+  margin-bottom:40px;
+}
+
+/* ACCORDION */
+.accordion-item{
+  background:#fff;
+  border-radius:14px;
+  margin-bottom:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  overflow:hidden;
+}
+.accordion-header{
+  padding:18px 22px;
+  cursor:pointer;
+  font-weight:bold;
+  background:#bae6fd;
+  display:flex;
+  justify-content:space-between;
+}
+.accordion-header::after{
+  content:"+";
+}
+.accordion-item.active .accordion-header::after{
+  content:"−";
+}
+.accordion-body{
+  display:none;
+  padding:20px;
+  background:#f0f9ff;
+}
+
+/* KAYAN YAZI */
+.kayan-yazi{
+  margin:60px 0 30px;
+  background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+  color:#fff;
+  padding:14px 0;
+  border-radius:10px;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.kayan-yazi span{
+  display:inline-block;
+  padding-left:100%;
+  animation:kay 14s linear infinite;
+}
+@keyframes kay{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+
+/* YORUM */
+.yorum-alani{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+textarea{
+  width:100%;
+  min-height:90px;
+  padding:12px;
+  border-radius:10px;
+  border:2px solid #7dd3fc;
+}
+button{
+  width:100%;
+  margin-top:15px;
+  padding:14px;
+  border:none;
+  border-radius:999px;
+  background:#0ea5e9;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+.yorum{
+  margin-top:12px;
+  padding:14px;
+  background:#f0f9ff;
+  border-left:4px solid #38bdf8;
+  border-radius:10px;
+}
+.ana-don-btn{
+  display:block;
+  width:min(85%,420px);
+  margin:60px auto 20px;
+  padding:15px 25px;
+  text-align:center;
+  text-decoration:none;
+  font-size:1.05rem;
+  font-weight:600;
+  color:#fff;
+  border-radius:999px;
+  background:linear-gradient(135deg,#7dd3fc,#7dd3fc);
+  box-shadow:0 15px 35px rgba(244,114,182,.45);
+  transition:.25s;
+}
+
+.ana-don-btn:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 22px 45px #7dd3fc;
+}
+
+.ana-don-btn:active{
+  transform:scale(.96);
+}
+</style>
+</head>
+
+<body>
+
+<h1>Sıkça Sorulan Sorular</h1>
+<a href="" class="ana-don-btn">🏠 Ana Ekrana Dön</a>
+<div id="sssAccordion">
+
+<div class="accordion-item">
+  <div class="accordion-header">1. Eğitimler ücretli mi?</div>
+  <div class="accordion-body">Hayır. Tüm içerikler ücretsizdir.</div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">2. Sertifika veriliyor mu?</div>
+  <div class="accordion-body">Bu platform eğitim ve pratik amaçlıdır, sertifika içermez.</div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">3. Yeni başlayanlar için uygun mu?</div>
+  <div class="accordion-body">Evet. Hiç bilmeyenler için de uygundur.</div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">4. Protez tırnak zararlı mı?</div>
+  <div class="accordion-body">Doğru ürün ve teknikle uygulandığında zararlı değildir.</div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">5. Jel mi akrilik mi daha dayanıklı?</div>
+  <div class="accordion-body">Akrilik daha serttir, jel daha esnektir.</div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">6. Tırnaklarım kısa, yine de olur mu?</div>
+  <div class="accordion-body">Evet. Kısa tırnaklarda da uygulama yapılabilir.</div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">7. Simülasyonlar nasıl çalışıyor?</div>
+  <div class="accordion-body">Gerçek uygulamayı dijital ortamda birebir simüle eder.</div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">8. Oje taşarsa ne yapmalıyım?</div>
+  <div class="accordion-body">Aseton yardımıyla temizleyebilirsin.</div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">9. Nail art öğrenebilir miyim?</div>
+  <div class="accordion-body">Evet. Temelden ileri seviyeye kadar içerik var.</div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">10. Mobil cihazlarda çalışır mı?</div>
+  <div class="accordion-body">Evet. Telefon ve tablet uyumludur.</div>
+</div>
+
+</div>
+
+<!-- KAYAN YAZI -->
+<div class="kayan-yazi">
+  <span>💬 Dilek ve önerilerin bizim için önemli! Aşağıdan yorum bırak 💅</span>
+</div>
+
+<!-- YORUM -->
+<div class="yorum-alani">
+  <h2>Yorum Bırak</h2>
+  <textarea id="yorumInput" placeholder="Yorumunu yaz..."></textarea>
+  <button id="yorumGonder">Gönder</button>
+  <div id="yorumListesi"></div>
+</div>
+
+<script>
+// ACCORDION
+document.querySelectorAll(".accordion-header").forEach(h=>{
+  h.onclick=()=>{
+    const item=h.parentElement;
+    const body=h.nextElementSibling;
+    item.classList.toggle("active");
+    body.style.display=item.classList.contains("active")?"block":"none";
+  }
+});
+
+// YORUM + LOCAL STORAGE
+const input=document.getElementById("yorumInput");
+const btn=document.getElementById("yorumGonder");
+const liste=document.getElementById("yorumListesi");
+
+let yorumlar=JSON.parse(localStorage.getItem("yorumlar"))||[];
+yorumlar.forEach(y=>ekle(y));
+
+btn.onclick=()=>{
+  const t=input.value.trim();
+  if(t.length<5){alert("Biraz uzun yaz 😅");return;}
+  yorumlar.push(t);
+  localStorage.setItem("yorumlar",JSON.stringify(yorumlar));
+  ekle(t);
+  input.value="";
+};
+
+function ekle(t){
+  const d=document.createElement("div");
+  d.className="yorum";
+  d.textContent=t;
+  liste.prepend(d);
+}
+</script>
+
+</body>
+</html>

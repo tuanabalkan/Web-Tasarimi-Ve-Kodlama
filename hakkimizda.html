@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hakkımızda - Tırnak Eğitimi Platformu</title>
+
+  <style>
+    body{
+      background:#f3e9ff;
+      font-family:Arial, sans-serif;
+      color:#4a2c6f;
+      padding:20px;
+    }
+
+    /* BALON BAŞLIK GENEL */
+    .baslik-balon{
+      display:flex;
+      justify-content:center;
+      margin:35px 0;
+    }
+
+    .baslik-balon h1,
+    .baslik-balon h2{
+      background:#e6d4ff;
+      padding:16px 36px;
+      border-radius:50px;
+      box-shadow:0 8px 20px rgba(106,63,160,0.25);
+      color:#4a2c6f;
+      position:relative;
+      text-align:center;
+    }
+
+    .baslik-balon h1{
+      font-size:32px;
+    }
+
+    .baslik-balon h2{
+      font-size:22px;
+    }
+
+    /* balon kuyruğu */
+    .baslik-balon h1::after,
+    .baslik-balon h2::after{
+      content:"";
+      position:absolute;
+      bottom:-12px;
+      left:50%;
+      transform:translateX(-50%);
+      width:18px;
+      height:18px;
+      background:#e6d4ff;
+      border-radius:50%;
+      box-shadow:0 4px 10px rgba(106,63,160,0.2);
+    }
+
+    p{
+      max-width:900px;
+      margin:0 auto;
+      line-height:1.6;
+    }
+
+    hr{
+      border:0;
+      height:1px;
+      background:#d8c2f0;
+      margin:35px 0;
+    }
+
+    .btn{
+      background:#caa7ff;
+      color:#4a2c6f;
+      border:none;
+      padding:12px 22px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:15px;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:#b28ae6;
+    }
+
+    /* FORM ALANI */
+    .merak-alani{
+      background:#fff;
+      border-radius:14px;
+      padding:25px;
+      margin-top:60px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      max-width:700px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .merak-alani h3{
+      text-align:center;
+      color:#6a3fa0;
+      margin-bottom:25px;
+    }
+
+    .form-group{
+      margin-bottom:15px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:6px;
+      font-weight:bold;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:10px;
+      border-radius:6px;
+      border:1px solid #d0b8f0;
+    }
+
+    textarea{
+      resize:none;
+      height:90px;
+    }
+
+    .btn-group{
+      display:flex;
+      gap:15px;
+      justify-content:center;
+      margin-top:20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="baslik-balon">
+  <h1>Hakkımızda</h1>
+</div>
+
+<div class="baslik-balon">
+  <h2 id="paragraf1">Kuruluş Amacımız</h2>
+</div>
+<p>Kuruluş amacımız, tırnak bakım ve protez tırnak uygulamalarını bilimsel temellere dayanan, güvenli ve profesyonel bir eğitim yaklaşımıyla öğretmektir. Sitemizde sunulan tüm içerikler; uluslararası tırnak standartları, dermatolojik kılavuzlar ve sektörün önde gelen uzmanlarının uygulama prensipleri dikkate alınarak hazırlanır.</p>
+<hr>
+
+<div class="baslik-balon">
+  <h2 id="paragraf2">Eğitim Materyalleri</h2>
+</div>
+<p>Eğitim materyallerimiz; CDC ve OSHA gibi kurumların hijyen ve sağlık yönergeleri, profesyonel tırnak sanatçıları tarafından kullanılan teknik tanımlar ve güncel uygulama yöntemleri temel alınarak düzenlenmiştir.</p>
+<hr>
+
+<div class="baslik-balon">
+  <h2 id="paragraf3">Platform Yapısı</h2>
+</div>
+<p>Platformumuz, kullanıcıların hem teorik hem de pratik becerilerini geliştirebilmesi için açık, anlaşılır ve sistematik bir eğitim yapısı sunar.</p>
+<hr>
+
+<div class="baslik-balon">
+  <h2 id="paragraf4">Amacımız</h2>
+</div>
+<p>Amacımız, sektöre adım atmak isteyen ya da mevcut bilgi ve becerilerini geliştirmeyi hedefleyen kullanıcılara güvenli, bilimsel ve profesyonel bir kaynak sağlamaktır.</p>
+<hr>
+
+<div class="baslik-balon">
+  <h2 id="paragraf5">Felsefemiz</h2>
+</div>
+<p>Bu platform, tırnak sanatının yalnızca estetik bir işlem olmadığını; teknik bilgi, hijyen bilinci ve profesyonel yaklaşım gerektiren kapsamlı bir alan olduğunu benimseyen herkes için hazırlanmıştır.</p>
+<hr>
+
+<div style="text-align:center">
+  <button id="btnJs" class="btn">Platform Hakkında Daha Fazla</button>
+</div>
+
+<!-- MERAK FORMU -->
+<div class="merak-alani">
+  <h3>Bizim Hakkımızda Merak Ettiklerinizi Yazın</h3>
+
+  <div class="form-group">
+    <label>Ad Soyad</label>
+    <input type="text" id="adSoyad">
+  </div>
+
+  <div class="form-group">
+    <label>Kullanıcı Adı</label>
+    <input type="text" id="kullaniciAdiForm">
+  </div>
+
+  <div class="form-group">
+    <label>Tarih</label>
+    <input type="date" id="tarih">
+  </div>
+
+  <div class="form-group">
+    <label>Merak Ettiğiniz Şey</label>
+    <textarea id="merak"></textarea>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn" onclick="kaydet()">Kaydet</button>
+    <button class="btn" onclick="anasayfa()">Ana Sayfaya Dön</button>
+  </div>
+</div>
+
+<script>
+  let kullaniciAdi = prompt("Adın ne güzelim?");
+  alert("Hoşgeldin " + (kullaniciAdi || "") + " 💜");
+
+  document.getElementById("btnJs").onclick = function(){
+    let secim;
+    do{
+      secim = prompt(
+        "1: Kuruluş Amacı\n2: Eğitim Materyalleri\n3: Platform Yapısı\n4: Amacımız\n5: Felsefemiz\nÇıkış için 'çıkış'"
+      ).toLowerCase();
+
+      if(secim==="çıkış") break;
+      alert("Bilgi için sayfadaki başlıkları inceleyebilirsin 💅");
+    }while(true);
+  }
+
+  function kaydet(){
+    localStorage.setItem("merakFormu", JSON.stringify({
+      adSoyad: adSoyad.value,
+      kullaniciAdi: kullaniciAdiForm.value,
+      tarih: tarih.value,
+      merak: merak.value
+    }));
+    alert("Kaydedildi 💜");
+  }
+
+  function anasayfa(){
+    window.location.href="index.html";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Nail Academy</title>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fde2e4, #fbcfe8);
+  color: #6b214a;
+}
+
+.gizli { display: none; }
+
+/* ===== BUTON ===== */
+button {
+  background: linear-gradient(135deg, #f472b6, #ec4899);
+  border: none;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  margin: 5px;
+}
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* ===== INPUT ===== */
+input {
+  padding: 14px;
+  border-radius: 20px;
+  border: 2px solid #f9a8d4;
+  width: 100%;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+/* ===== KUTULAR ===== */
+.kutu {
+  max-width: 420px;
+  margin: 80px auto;
+  background: white;
+  padding: 35px;
+  border-radius: 35px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+/* ===== NAV ===== */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 50px;
+  background: rgba(255, 240, 246, 0.8);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid rgba(236,72,153,0.2);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(135deg,#ec4899,#f472b6);
+  -webkit-background-clip:text;
+  color: transparent;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  font-weight: 500;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  padding: 8px 4px;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(135deg,#ec4899,#f472b6);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #ec4899;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.karsilama {
+  background: white;
+  border-radius: 40px;
+  margin: 40px;
+  padding: 70px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+#kalpKutusu {
+  margin-top: 30px;
+  font-size: 22px;
+}
+#kalpKutusu span { color:#ec4899; }
+
+.kartlar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.kart {
+  background: white;
+  padding: 35px;
+  border-radius: 30px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.kart:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #f9a8d4;
+  padding: 40px;
+  margin-top: 80px;
+}
+
+table {
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+td { padding: 10px 20px; }
+</style>
+</head>
+
+<body>
+
+<!-- KARŞILAMA -->
+<div id="karsilamaEkrani" class="kutu">
+  <h1>💖 Hoş Geldin!</h1>
+  <p>
+    Hoş geldin sitemize 💅  
+    Kayıtlı mısın?
+  </p>
+  <button onclick="girisEkraniAc()">Giriş Yap</button>
+  <button onclick="kayitEkraniAc()">Kayıt Ol</button>
+</div>
+
+<!-- GİRİŞ -->
+<div id="girisEkrani" class="kutu gizli">
+  <h1>🔐 Giriş Yap</h1>
+  <input id="girisKullaniciAdi" placeholder="Kullanıcı Adı">
+  <input id="girisSifre" type="password" placeholder="Şifre">
+  <button onclick="girisYap()">Giriş Yap</button>
+</div>
+
+<!-- KAYIT -->
+<div id="kayitEkrani" class="kutu gizli">
+  <h1>✨ Kayıt Ol</h1>
+  <input id="kayitKullaniciAdi" placeholder="Kullanıcı Adı">
+  <input id="kayitSifre" type="password" placeholder="En az 8 karakter">
+  <button onclick="kayitOl()">Kaydı Tamamla</button>
+</div>
+
+<!-- ANA SAYFA -->
+<div id="anaSayfa" class="gizli">
+
+<nav>
+  <div class="logo">Nail Academy</div>
+  <ul>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="sss.html">sss</a></li>
+    <li><a href="oyunDeneme.html">Nedir Bu Kalper?</a></li>
+    <li><a href="mp.html">Manikür&Pdikür</a></li>
+    <li><a href="oje.html">Oje 101</a></li>
+  </ul>
+</nav>
+
+<section class="karsilama">
+  <h2>Hoş Geldiniz 💅</h2>
+  <p>
+    Sizlere güzel bir hizmet vermek üzere buradayız.  
+    Hem eğlenip hem öğrenmeye hazır mısın?
+  </p>
+
+  <div id="kalpKutusu">
+    💗 Kalplerin: <span id="kalpSayisi">0</span>
+  </div>
+
+  <button onclick="gunlukOdul()">🎁 Günlük 200 Kalp</button>
+</section>
+
+<section>
+  <h2>Sitede Seni Neler Bekliyor?</h2>
+  <div class="kartlar">
+    <div class="kart">🎮 Mini oyunlar oynayıp kalp kazan</div>
+    <div class="kart">💖 Kalplerle özel içeriklere eriş</div>
+    <div class="kart">💅 Eğlenceli nail eğitimleri</div>
+  </div>
+</section>
+
+<footer>
+  <table>
+    <tr><td>📞 Telefon</td><td>0543 495 57 00</td></tr>
+    <tr><td>📧 Mail</td><td>tuanabalkan2@gmail.com</td></tr>
+    <tr><td>📸 Instagram</td><td>@tuanabalkaan</td></tr>
+    <tr><td colspan="2" style="text-align:center;">Tüm hakları gizlidir.</td></tr>
+  </table>
+</footer>
+
+</div>
+
+<script>
+document.addEventListener("keydown", e => {
+  if (e.ctrlKey && e.key === "s") e.preventDefault();
+});
+
+function girisEkraniAc() {
+  karsilamaEkrani.classList.add("gizli");
+  girisEkrani.classList.remove("gizli");
+}
+
+function kayitEkraniAc() {
+  karsilamaEkrani.classList.add("gizli");
+  kayitEkrani.classList.remove("gizli");
+}
+
+function kayitOl() {
+  let ad = kayitKullaniciAdi.value;
+  let sifre = kayitSifre.value;
+
+  if (!/^[a-zA-Z0-9]+$/.test(ad) || sifre.length < 8) {
+    Swal.fire("Hata","Bilgileri kontrol et","error");
+    return;
+  }
+
+  localStorage.setItem("kullaniciAdi", ad);
+  localStorage.setItem("sifre", sifre);
+  localStorage.setItem("kalpler", 0);
+
+  kayitEkrani.classList.add("gizli");
+  anaSayfa.classList.remove("gizli");
+  kalpleriYukle();
+}
+
+function girisYap() {
+  if (
+    girisKullaniciAdi.value === localStorage.getItem("kullaniciAdi") &&
+    girisSifre.value === localStorage.getItem("sifre")
+  ) {
+    girisEkrani.classList.add("gizli");
+    anaSayfa.classList.remove("gizli");
+    kalpleriYukle();
+  } else {
+    Swal.fire("Hata","Giriş bilgileri yanlış","error");
+  }
+}
+
+function kalpleriYukle() {
+  kalpSayisi.innerText = localStorage.getItem("kalpler") || 0;
+}
+
+function gunlukOdul() {
+  let bugun = new Date().toDateString();
+  let sonOdul = localStorage.getItem("sonOdul");
+
+  if (sonOdul === bugun) {
+    Swal.fire("Dur 😏","Bugünlük ödül alındı","info");
+    return;
+  }
+
+  let mevcutKalp = Number(localStorage.getItem("kalpler")) || 0;
+  mevcutKalp += 200;
+
+  localStorage.setItem("kalpler", mevcutKalp);
+  localStorage.setItem("sonOdul", bugun);
+  kalpSayisi.innerText = mevcutKalp;
+
+  Swal.fire("Yaşasın 💅","+200 kalp kazandın","success");
+}
+</script>
+
+</body>
+</html>
