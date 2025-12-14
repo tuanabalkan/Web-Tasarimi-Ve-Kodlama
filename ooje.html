@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Oje & Protez Tırnak Rehberi</title>
+<style>
+:root{
+  --bg:#fff7c2;
+  --card:#fffdf0;
+  --primary:#e6c200;
+  --secondary:#ffec80;
+  --text:#5c4a00;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+header{
+  background:linear-gradient(135deg,var(--secondary),var(--primary));
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+header h1{margin:0;font-size:26px;}
+header a{
+  text-decoration:none;
+  background:#fff;
+  padding:10px 16px;
+  border-radius:30px;
+  color:var(--text);
+  font-weight:600;
+}
+#kalpBox{
+  background:#fff;
+  padding:10px 16px;
+  border-radius:30px;
+  font-weight:600;
+}
+main{
+  padding:30px;
+  max-width:1000px;
+  margin:auto;
+}
+section{
+  background:var(--card);
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:30px;
+  box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+section h2{
+  margin-top:0;
+  background:var(--secondary);
+  display:inline-block;
+  padding:8px 16px;
+  border-radius:20px;
+}
+section p{line-height:1.7;}
+/* Mini oyun */
+#game{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.nail{
+  width:120px;
+  height:160px;
+  background:#f5e3c0;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  cursor:pointer;
+  transition:.3s;
+}
+/* Şekillere göre gerçek form */
+.nail[data-shape="Badem"]{border-radius:60% 60% 40% 40%;}
+.nail[data-shape="Kare"]{border-radius:10px;}
+.nail[data-shape="Oval"]{border-radius:50% 50% 35% 35%;}
+.nail[data-shape="Stiletto"]{
+  clip-path:polygon(50% 0%, 100% 100%, 0% 100%);
+}
+.nail span{
+  background:#fff;
+  width:100%;
+  text-align:center;
+  padding:8px 0;
+  border-radius:0 0 20px 20px;
+  font-weight:600;
+}
+.nail:hover{transform:scale(1.05);}
+.nail{
+  width:120px;
+  height:160px;
+  border-radius:60px 60px 30px 30px;
+  background:#f5e3c0;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  cursor:pointer;
+  transition:.3s;
+}
+.nail span{
+  background:#fff;
+  width:100%;
+  text-align:center;
+  padding:8px 0;
+  border-radius:0 0 30px 30px;
+  font-weight:600;
+}
+.nail:hover{transform:scale(1.05);}
+.selected{outline:5px solid var(--primary);}
+button{
+  background:var(--primary);
+  border:none;
+  padding:12px 20px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:600;
+}
+button:hover{background:#d4b000;}
+#randomTip{
+  margin-top:15px;
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<header>
+  <a href="#">Ana Ekrana Dön</a>
+  <h1>Oje & Protez Tırnak Rehberi</h1>
+  <div id="kalpBox">❤️ Kalp: <span id="kalp">0</span></div>
+</header><main>
+<section>
+<h2>Ojeye Giriş: Oje Nedir?</h2>
+<p>Oje, tırnakların üzerine sürülen ve kuruduğunda ince bir tabaka oluşturan kozmetik bir üründür. Temel amacı tırnağa renk vermek gibi görünse de aslında tırnağı dış etkenlerden korumaya da yardımcı olur. Oje sürüldüğünde tırnak yüzeyi kaplanır, bu da suyla ve günlük darbelerle doğrudan temasını azaltır. Ancak yanlış ürünler ve yanlış uygulamalar tırnağa fayda yerine zarar verebilir.</p>
+<p>Oje, estetik bir detay olmanın yanında bakımın da bir parçasıdır. Bu yüzden sadece rengine değil, nasıl ve neyle uygulandığına da dikkat edilmelidir.</p>
+</section><section>
+<h2>Tırnağın Yapısı ve Görevleri</h2>
+<p>Tırnak, sandığımızdan daha karmaşık bir yapıya sahiptir. Her bölümün ayrı bir görevi vardır ve bu bölümlere yapılan yanlış müdahaleler tırnak sağlığını bozar.</p>
+<p>Tırnak plağı, ojeyi sürdüğümüz sert yüzeydir. Tırnak yatağı, tırnağın altındaki canlı dokudur. Kütikül tırnağın kökünü mikroplardan korur ve kesilmemelidir. Lunula ise tırnağın üretim merkezidir.</p>
+</section><section>
+<h2>Normal (Klasik) Oje</h2>
+<p>Normal oje, hava ile kuruyan ve asetonla çıkarılabilen oje türüdür. Evde kullanım için en uygun seçenektir. Pigmentler, çözücüler ve film oluşturucu maddelerden oluşur.</p>
+</section><section>
+<h2>Baz Kat & Top Coat</h2>
+<p>Baz kat, tırnağı boyadan korur ve ojeyi daha kalıcı hale getirir. Top coat ise ojeyi mühürler, parlaklık verir ve çizilmeleri azaltır.</p>
+</section><section>
+<h2>Oje Uygulama ve Soyulma Nedenleri</h2>
+<p>Ojeyi ince katlar halinde sürmek, baz ve top coat kullanmak kalıcılığı artırır. Kalın sürülen oje geç kurur ve çabuk bozulur.</p>
+</section><section>
+<h2>Protez Tırnak & Kalıcı Oje</h2>
+<p>Protez tırnak, doğal tırnağın üzerine yapılan yapay güçlendirme veya uzatma işlemidir. Jel, akrilik ve polygel sistemleri vardır. Kalıcı oje ise UV/LED lamba ile kurur ve haftalarca dayanır.</p>
+</section><section>
+<h2>Bakım, Hijyen ve Genel Değerlendirme</h2>
+<p>Doğru bakım, hijyen ve bilinçli uygulama ile oje ve protez tırnak sistemleri güvenle kullanılabilir. Yanlış uygulamalar ise kalıcı hasarlara yol açabilir.</p>
+</section><section>
+<h2>Normal & Kalıcı Oje</h2>
+<p>Normal ojeler hava ile kurur ve asetonla çıkarılır. Kalıcı ojeler ise UV/LED lamba ile sertleşir ve haftalarca bozulmadan kalır. Her sistemin kullanım amacı ve bakım ihtiyacı farklıdır.</p>
+</section><section>
+<h2>Protez Tırnak Sistemleri</h2>
+<p>Jel, akrilik ve polygel sistemleri; tırnağı uzatmak, güçlendirmek ve şekillendirmek için kullanılır. Uygulama sırasında yapılan hatalar tırnağa zarar verebilir, bu yüzden bilgi şarttır.</p>
+</section><section>
+<h2>🎮 Mini Oyun: Tırnak Şeklini Seç</h2>
+<p>Beğendiğin tırnak şeklini seç, her doğru seçim sana kalp kazandırsın 💛</p>
+<div id="game">
+  <div class="nail" data-shape="Badem"><span>Badem</span></div>
+  <div class="nail" data-shape="Kare"><span>Kare</span></div>
+  <div class="nail" data-shape="Oval"><span>Oval</span></div>
+  <div class="nail" data-shape="Stiletto"><span>Stiletto</span></div>
+</div>
+<br>
+<button onclick="puanVer()">Seçimi Onayla</button>
+</section><section>
+<h2>💡 Günlük Tırnak İpucu</h2>
+<button onclick="ipucuGetir()">İpucu Göster</button>
+<div id="randomTip"></div>
+</section>
+</main><script>
+let kalp = localStorage.getItem('kalp') ? Number(localStorage.getItem('kalp')) : 0;
+document.getElementById('kalp').textContent = kalp;
+let secilen = null;
+
+document.querySelectorAll('.nail').forEach(nail=>{
+  nail.addEventListener('click',()=>{
+    document.querySelectorAll('.nail').forEach(n=>n.classList.remove('selected'));
+    nail.classList.add('selected');
+    secilen = nail.dataset.shape;
+  });
+});
+
+function puanVer(){
+  if(!secilen){alert('Önce bir tırnak şekli seç 😅');return;}
+  kalp += 5;
+  localStorage.setItem('kalp',kalp);
+  document.getElementById('kalp').textContent = kalp;
+  alert(secilen + ' seçtin! +5 kalp ❤️');
+}
+
+const ipuclari = [
+  'Ojeyi ince katlar halinde sür, kalın sürme sabırsızlık getirir.',
+  'Tırnak etini kesme, sadece geriye it.',
+  'Kalıcı oje koparılmaz, söktürülür.',
+  'Günlük tırnak yağı mucize yaratır.',
+  'Baz kat olmadan renkli oje sürme.'
+];
+function ipucuGetir(){
+  const rastgele = ipuclari[Math.floor(Math.random()*ipuclari.length)];
+  document.getElementById('randomTip').textContent = rastgele;
+}
+</script></body>
+</html>
